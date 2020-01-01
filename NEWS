@@ -1,3 +1,109 @@
+CHANGES in VERSION 2.3.1
+
+* `anno_points()`: allows images as symbols.
+* add `HEATMAP_LEGEND_PADDING` and `ANNOTATION_LEGEND_PADDING` options in `ht_opt`
+
+========================
+
+CHANGES in VERSION 2.1.1
+
+* `Heatmap()`: give error when heatmap has empty string as its name.
+* `anno_mark()`: text positions are correctly calculated now with rotations.
+* The order of legend labels are ordered by either `sort` or `levels`.
+
+========================
+
+CHANGES in VERSION 2.1.0
+
+* check the length of the clustering objects and the matrix rows/columns
+* `anno_oncoprint_barplot()`: add `ylim` argumnet
+* `anno_mark()`: add `labels_rot` argument
+* `draw_legend()`: legends for annotations with the same names are merged
+* `densityHeatmap()`: `ylim` works as it is expected.
+* add `cluster_row_slices` and `cluster_column_slices` to `draw,HeatmapList-method()`
+* `densityHeatmap()`: `col` can be set as a function
+* add `cluster_rows`/`cluster_columns` in `oncoPrint()`
+* legend labels support symbols
+* `Heatmap()`: add `jitter` argument to add tiny random shift to original matrix. 
+   It is mainly to solve the problem of "Error: node stack overflow"
+   when there are too many identical rows/columns for plotting the dendrograms.
+
+========================
+
+CHANGES in VERSION 1.99.8
+
+* add `title_gap` in `Legend()
+* fixed a bug of wrong row title spaces when multiple heatmaps are vertically
+  concatenated.
+* fixed a bug of *_sub_title_side when the heatmap annotation is the first/last
+  element in the heatmap list.
+* zero-column/row heatmap is supported.
+* improved calculation of axis breaks
+
+========================
+
+CHANGES in VERSION 1.99.7
+
+* `UpSet()` supports adding complement sets.
+* `make_comb_set()`: add `universal_set` and `complement_size` arguments.
+* axes can be reversed in anno_* functions.
+
+========================
+
+CHANGES in VERSION 1.99.6
+
+* adjust the size of heatmap annotations and add testing scripts.
+* run multiple times k-means to get a consensus partition.
+* `show_heatmap_legend` is set to FALSE if `rect_gp = gpar(type = "none")`.
+* add `restore_matrix()`.
+* add `row_names_centered`/`column_names_centered` arguments to `Heatmap()`.
+* `gp` in `anno_text()` supports `fill` and `border`.
+* `Legend` adds boxplot-style legend.
+* adjustment according to annotation extension is improved.
+
+========================
+
+CHANGES in VERSION 1.99.5
+
+* add `UpSet()` and some related functions to make Upset plots
+* fixed bugs of drawing legends
+* add `test_alter_fun()`
+* `HeatmapAnnotation()`: fixed a bug for setting `height` when all annotations are simple annotations.
+* `default_col()`: if the fraction of positive values in the matrix is in (0.3, 0.7), the color mapping
+  is symmetric to zero.
+* check `NA` values in `anno_boxplot()` and `anno_density()`.
+* add `mc.cores` in `densityHeatmap()`.
+
+========================
+
+CHANGES in VERSION 1.99.4
+
+* anno_mark() is now calculated in multiple slices.
+* oncoPrint(): automatically split the alteration type if the separator is one of ";:,|".
+* add anno_zoom()
+
+========================
+
+CHANGES in VERSION 1.99.1
+
+* add `cluster_row_slices` and `cluster_column_slices` arguments in `Heatmap()`.
+* fixed a bug when annotation_height with only one annotation
+* order of k-means slices are reordered by slice mean of `row_reorder`/`column_reorder`
+  if they are provided as vectors.
+* remove **rsvg** from Suggests.
+
+=======================
+
+CHANGES in VERSION 1.99.0
+
+This a major update of the package. The main changes are:
+* support column split
+* support align heatmaps vertically
+* add a naive `AnnotationFunction` class to handle annotation functions
+* add more annotation functions
+
+=======================
+
 CHANGES in VERSION 1.19.1
 
 * `Heatmap()`: no column name added if the input matrix is a one-column matrix.
